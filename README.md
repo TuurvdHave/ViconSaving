@@ -1,4 +1,6 @@
 # ViconSaving
+These codes export automatically your vicon data to OpenSim data. Ground reaction forces are even allocated to the correct foot automatically. 
+
 How to install the pipeline? 
 1)	Extract the folder pipelines.zip to C:\Users\Public\Documents\Vicon\Nexus2.x\Configurations\Pipelines
 2)	Open Vicon and you should be able to see the pipeline SaveTrial in the pipeline tab
