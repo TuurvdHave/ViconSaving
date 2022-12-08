@@ -56,12 +56,13 @@ end
     [Markers,MLabels,VideoFrameRate,AnalogSignals,ALabels, AUnits, AnalogFrameRate,Event,ParameterGroup,CameraInfo]...
         = readC3D(Path_In);
     Mark.Labels = MLabels; Mark.Data = Markers;
+    Frame = [ParameterGroup(1).Parameter(1).data(1,1)/VideoFrameRate ParameterGroup(1).Parameter(2).data(1,1)/VideoFrameRate];
     %% update the trc file 
         [TRCdata,labels] = importTRCdata(fullfile(path,[name '.trc']));
         
-        writeMarkersToTRC(fullfile(path,[name '.trc']),TRCdata(:,3:end),labels(3:end),VideoFrameRate,[],[],'mm')
+        writeMarkersToTRC(fullfile(path,[name '.trc']),TRCdata(:,3:end),labels(3:end),VideoFrameRate,[Frame(1,1):Frame(1,2)],[Frame(1,1):1/FrameRate:(Frame(1,1) + (size(TRCdata,1)-1)/FrameRate)]','mm')
 
-    Frame = [ParameterGroup(1).Parameter(1).data(1,1)/VideoFrameRate ParameterGroup(1).Parameter(2).data(1,1)/VideoFrameRate];
+   
         %% PROCESS GRF for OpenSimProcessing
         %-----------------------------------
         if Treadmill
