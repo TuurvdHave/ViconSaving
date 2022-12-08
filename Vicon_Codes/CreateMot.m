@@ -57,7 +57,13 @@ end
         = readC3D(Path_In);
     Mark.Labels = MLabels; Mark.Data = Markers;
     %% update the trc file 
-        [TRCdata labels] = importTRCdata(fullfile(path,[name '.trc']));
+        [TRCdata,labels] = importTRCdata(fullfile(path,[name '.trc']));
+        for i = 1 : size(TRCdata,2)
+        if isnan(TRCdata(1,i)) && isnan(TRCdata((size(TRCdata,1)/2),i)) && isnan(TRCdata(end,i))
+            TRCdata(:,i) = [];
+            labels(:,i) = [];
+        end 
+        end 
         
         writeMarkersToTRC(fullfile(path,[name '.trc']),TRCdata(:,3:end),labels(3:end),VideoFrameRate,(TRCdata(1:end,1)),(TRCdata(1:end,2)),'mm')
 
