@@ -32,11 +32,11 @@ FP_filter   = 15; % treshold for the low-pass filter for the force plate data.
 %--------------
 
 if Treadmill
-    RotationMatrix.markers    =  rotx(-90)*rotz(90); %rotation matrix Vicon World-CS to Opensim World-CS, angle should be in degrees! Lab dependent!!!
-    RotationMatrix.ForcePlate =  roty(180); %rotation matrix Force plate CS to Vicon World-CS, angle should be in degrees! Lab dependent!!!
+    RotationMatrix.markers    =  [0, -1, 0;0, 0, 1;-1, 0, 0]; %rotation matrix Vicon World-CS to Opensim World-CS, angle should be in degrees! Lab dependent!!!
+    RotationMatrix.ForcePlate =  [-1, 0, 0;0, 1, 0;0, 0, -1]; %rotation matrix Force plate CS to Vicon World-CS, angle should be in degrees! Lab dependent!!!
 else
-    RotationMatrix.markers     =  rotx(-90)*rotz(180); %rotation matrix Vicon World-CS to Opensim World-CS, angle should be in degrees! Lab dependent!!!
-    RotationMatrix.ForcePlate  =  rotz(-90)*roty(180); %rotation matrix Force plate CS to Vicon World-CS, angle should be in degrees! Lab dependent!!!
+    RotationMatrix.markers     =  [0, -1, 0;0, 0, 1;-1, 0, 0]; %rotation matrix Vicon World-CS to Opensim World-CS, angle should be in degrees! Lab dependent!!!
+    RotationMatrix.ForcePlate  =  [0, 1, 0;1, 0, 0;0, 0, -1]; %rotation matrix Force plate CS to Vicon World-CS, angle should be in degrees! Lab dependent!!!
 end
     
     %input
