@@ -18,6 +18,7 @@ How to use the pipeline?
 		When running on the treadmill on the subject only ran on one force plate, the second input argument should be ‘1’. Otherwise, it should be ‘0’.
 		When walking on the stairs, the third input argument should be ‘1’. Otherwise it should be ‘0’.
 		All input arguments should be split by a comma as seen in the figure. 
+		If you don't use the heel markers "RHEE" and "LHEE", change the heel marker names in the createmot matlabcode in line 26-27 to your heel marker names. 
 7)	The last step in the pipeline is to write a file containing the different events and doesn’t require any inputs. When all settings are correctly defined, you can push play and your trial will be saved correctly and ready to use in OpenSim. 
 
 
