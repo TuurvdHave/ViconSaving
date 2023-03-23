@@ -1,4 +1,4 @@
-function [err]= Process_GRF_TM(AnalogSignals,treshold,AnalogFrameRate,VideoFrameRate,outname,Mark,Markers,ParameterGroup,RotationMatrix,FP_filter,Footmarker,Frame);
+function [err]= Process_GRF_TM(AnalogSignals,treshold,AnalogFrameRate,VideoFrameRate,outname,Mark,Markers,ParameterGroup,RotationMatrix,Footmarker,Frame);
 
 R     = RotationMatrix.markers(1:3,1:3);    % rotation lab_frame to opensim *roty(-pi/2)
 R_FP1 = RotationMatrix.ForcePlate(1:3,1:3);   % rotation force plate frame to Lab Frame
@@ -25,11 +25,6 @@ for i=1:nFP
     % get the forces
     Ind = f(i).channel;
     F = AnalogSignals(:,Ind);
-    
-    
-    % example of low pass filter
-    [a,b]=butter(4,FP_filter/(AnalogFrameRate*0.5),'low');%40 Hz, low pass filter.
-    F=filtfilt(a,b,F);
     
     Fx= F(:,1);  Fy=F(:,2);  Fz=F(:,3);
     Mx= F(:,4).*0.001;  My=F(:,5).*0.001;  Mz=F(:,6).*0.001;

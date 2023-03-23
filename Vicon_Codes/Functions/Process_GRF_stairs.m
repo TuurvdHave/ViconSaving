@@ -1,4 +1,4 @@
-function [err]= Process_GRF_stairs(AnalogSignals,threshold,grf_filter,AnalogFrameRate,VideoFrameRate,outname,Mark,ParameterGroup,RotationMatrix,Footmarker,Frame);
+function [err]= Process_GRF_stairs(AnalogSignals,threshold,AnalogFrameRate,VideoFrameRate,outname,Mark,ParameterGroup,RotationMatrix,Footmarker,Frame);
 
 R     =  RotationMatrix.markers(1:3,1:3);
 R = R * [-1,0,0;0,-1,0;0,0,1];
@@ -52,11 +52,6 @@ for i=1:nFP
     % get the forces
     Ind = f(i).channel;
     F = AnalogSignals(:,Ind);
-    
-    
-    % low pass filter
-    [a,b]=butter(4,grf_filter/(AnalogFrameRate*0.5),'low');% low pass filter.
-    F=filtfilt(a,b,F);
     
     Fx= F(:,1);  Fy=F(:,2);  Fz=F(:,3);
     Mx= F(:,4).*0.001;  My=F(:,5).*0.001;  Mz=F(:,6).*0.001;

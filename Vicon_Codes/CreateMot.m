@@ -67,15 +67,15 @@ end
         %-----------------------------------
         if Treadmill
             if Treadmill_OnePlate
-                [~]= Process_GRF_TM(AnalogSignals,treshold,AnalogFrameRate,VideoFrameRate,Path_GRF,Mark,Markers,ParameterGroup,RotationMatrix,FP_filter,Footmarker,Frame);
+                [~]= Process_GRF_TM(AnalogSignals,treshold,AnalogFrameRate,VideoFrameRate,Path_GRF,Mark,Markers,ParameterGroup,RotationMatrix,Footmarker,Frame);
             elseif Treadmill_TwoPlate
-                [~]= Process_GRF_TM2(AnalogSignals,treshold,AnalogFrameRate,VideoFrameRate,Path_GRF,Mark,Markers,ParameterGroup,RotationMatrix,FP_filter,Footmarker,Frame);
+                [~]= Process_GRF_TM2(AnalogSignals,treshold,AnalogFrameRate,VideoFrameRate,Path_GRF,Mark,Markers,ParameterGroup,RotationMatrix,Footmarker,Frame);
             end
         else
             if strcmpi(Stairs,'1')
-            [err]= Process_GRF_stairs(AnalogSignals,treshold,FP_filter,AnalogFrameRate,VideoFrameRate,Path_GRF,Mark,ParameterGroup,RotationMatrix,Footmarker,Frame);   
+            [err]= Process_GRF_stairs(AnalogSignals,treshold,AnalogFrameRate,VideoFrameRate,Path_GRF,Mark,ParameterGroup,RotationMatrix,Footmarker,Frame);   
             else 
-            [err]= Process_GRF(AnalogSignals,treshold,FP_filter,AnalogFrameRate,VideoFrameRate,Path_GRF,Mark,ParameterGroup,RotationMatrix,Footmarker,Frame);
+            [err]= Process_GRF(AnalogSignals,treshold,AnalogFrameRate,VideoFrameRate,Path_GRF,Mark,ParameterGroup,RotationMatrix,Footmarker,Frame);
             end
         end
 end 
