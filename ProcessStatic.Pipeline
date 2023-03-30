@@ -74,4 +74,13 @@
     </ParamList>
   </Entry>
 
+  <Entry DisplayName="Run MatLab Operation" Enabled="1" OperationId="0" OperationName="MATLAB">
+    <ParamList name="">
+      <Param name="Script" value="file:///D:/Github/ViconSaving/Vicon_Codes/FillTrc.m"/>
+      <Param name="ScriptArgs"/>
+      <Param name="addPath" value="true"/>
+      <Param name="LaunchMatlab" value="false"/>
+    </ParamList>
+  </Entry>
+
 </Pipeline>
