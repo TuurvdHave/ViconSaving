@@ -14,7 +14,7 @@ How to use the pipeline?
 		When using Opensim 3.x, put TRC Version on ‘Version 3’.
 		When using Opensim 4.x, put TRC Version on ‘Version 4’.
 6)  Vicon exports the .trc file and leaves gaps (empty cells) within the data when there is no value for that marker during that frame. OpenSim is not able to handle this.
-	This Matlab code will fill those gaps with NaNs 
+	The first Matlab operation in the pipeline will fill those gaps with NaNs 
 7)	Next, the .mot will be created and needs some input. You need to adapt the input arguments based on which force plates you used and how many are used. 
 		When the treadmill is used the first input argument should be ‘1’. Otherwise, it should be ‘0’.
 		When running on the treadmill on the subject only ran on one force plate, the second input argument should be ‘1’. Otherwise, it should be ‘0’.
