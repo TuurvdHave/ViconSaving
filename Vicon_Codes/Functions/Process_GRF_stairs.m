@@ -1,7 +1,7 @@
 function [err]= Process_GRF_stairs(AnalogSignals,threshold,AnalogFrameRate,VideoFrameRate,outname,Mark,ParameterGroup,RotationMatrix,Footmarker,Frame);
 
 R     =  RotationMatrix.markers(1:3,1:3);
-R = R * [-1,0,0;0,-1,0;0,0,1];
+R = R * [0,1,0;-1,0,0;0,0,1];
 R_FP1 =  RotationMatrix.ForcePlate(1:3,1:3);
 
 
