@@ -51,7 +51,7 @@
     </ParamList>
   </Entry>
 
-  <Entry DisplayName="Export C3D" Enabled="1" OperationId="11" OperationName="Exportc3d">
+  <Entry DisplayName="Export C3D" Enabled="1" OperationId="3" OperationName="Exportc3d">
     <ParamList name="">
       <Param macro="CURRENT_TRIAL" name="Filename"/>
       <Param macro="SELECTED_START_FRAME" name="StartFrame"/>
@@ -67,7 +67,7 @@
     </ParamList>
   </Entry>
 
-  <Entry DisplayName="Export TRC" Enabled="1" OperationId="12" OperationName="ExportTRC">
+  <Entry DisplayName="Export TRC" Enabled="1" OperationId="4" OperationName="ExportTRC">
     <ParamList name="">
       <Param macro="CURRENT_TRIAL" name="Filename"/>
       <Param macro="SELECTED_START_FRAME" name="StartFrame"/>
@@ -79,7 +79,7 @@
     </ParamList>
   </Entry>
 
-  <Entry DisplayName="Run MatLab Operation" Enabled="1" OperationId="13" OperationName="MATLAB">
+  <Entry DisplayName="Run MatLab Operation" Enabled="1" OperationId="5" OperationName="MATLAB">
     <ParamList name="">
       <Param name="Script" value="C:/Users/Public/Documents/Vicon/Nexus2.x/Configurations/Pipelines/Vicon_Codes/FillTrc.m"/>
       <Param name="ScriptArgs" value=""/>
@@ -88,10 +88,10 @@
     </ParamList>
   </Entry>
 
-  <Entry DisplayName="Run MatLab Operation" Enabled="0" OperationId="0" OperationName="MATLAB">
+  <Entry DisplayName="Run MatLab Operation" Enabled="1" OperationId="0" OperationName="MATLAB">
     <ParamList name="">
-      <Param name="Script"/>
-      <Param name="ScriptArgs"/>
+      <Param name="Script" value="C:/Users/Public/Documents/Vicon/Nexus2.x/Configurations/Pipelines/Vicon_Codes/CreateMot.m"/>
+      <Param name="ScriptArgs" value="'0','0','0'"/>
       <Param name="addPath" value="true"/>
       <Param name="LaunchMatlab" value="false"/>
     </ParamList>
