@@ -56,4 +56,4 @@ fprintf(fid, '\n\n');
 fclose(fid);
 
 % Now append the data to the file now that header has been written out.
-dlmwrite(trcfile, data, '-append', 'delimiter', '\t');
+dlmwrite(trcfile, data, '-append', 'delimiter', '\t', 'precision',7);
