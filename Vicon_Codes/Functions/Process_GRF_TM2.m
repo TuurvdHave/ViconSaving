@@ -235,6 +235,11 @@ end
 % legend('Right','Left')
 % pause(0.1)
 
+Forces1_filt_proper(:,4:6) = Forces1_filt_proper(:,4:6)*roty(90);
+Forces2_filt_proper(:,4:6) = Forces2_filt_proper(:,4:6)*roty(90);
+Forces1_filt_proper(:,1:3) = Forces1_filt_proper(:,1:3)*roty(90);
+Forces2_filt_proper(:,1:3) = Forces2_filt_proper(:,1:3)*roty(90);
+
 writeGRFsToMOT_loopband(Forces1_filt_proper(:,1:3),Forces2_filt_proper(:,1:3),Forces1_filt_proper(:,4:6),Forces2_filt_proper(:,4:6),Forces1_filt_proper(:,8),Forces2_filt_proper(:,8),AnalogFrameRate,outname,Frame);
 
 err = 1;
