@@ -53,6 +53,6 @@ Frame = [ParameterGroup(1).Parameter(1).data(1,1)/VideoFrameRate ParameterGroup(
 %% update the trc file
 [TRCdata,labels] = importTRCdata(fullfile(path,[name '.trc']));
 
-writeMarkersToTRC(fullfile(path,[name '.trc']),rotatedData,Mark.Labels,VideoFrameRate,TRCdata(:,1),TRCdata(:,2),'mm')
+writeMarkersToTRC(fullfile(path,[name '.trc']),rotatedData,labels(3:end),VideoFrameRate,TRCdata(:,1),TRCdata(:,2),'mm')
 
 end
