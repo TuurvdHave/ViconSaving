@@ -26,14 +26,14 @@ end
 Footmarker.R = 'RHEE';
 Footmarker.L = 'LHEE';
 
-treshold    = 100; % treshold to define valid FP contact.
+treshold    = 20; % treshold to define valid FP contact.
 FP_filter   = 15; % treshold for the low-pass filter for the force plate data.
 %% Proces Files
 %--------------
 
 if Treadmill
-    RotationMatrix.markers    =  [1, 0, 0;0, 0, 1;0, -1, 0]; %rotation matrix Vicon World-CS to Opensim World-CS, angle should be in degrees! Lab dependent!!!
-    RotationMatrix.ForcePlate =  [0, 0, 1;0, 1, 0;-1, 0, 0]; %rotation matrix Force plate CS to Vicon World-CS, angle should be in degrees! Lab dependent!!!
+    RotationMatrix.markers    =  [0, -1, 0;0, 0, 1;-1, 0, 0]; %rotation matrix Vicon World-CS to Opensim World-CS, angle should be in degrees! Lab dependent!!!
+    RotationMatrix.ForcePlate =  [-1, 0, 0;0, 1, 0;0, 0, -1]; %rotation matrix Force plate CS to Vicon World-CS, angle should be in degrees! Lab dependent!!!
 else
     RotationMatrix.markers     =  [0, -1, 0;0, 0, 1;-1, 0, 0]; %rotation matrix Vicon World-CS to Opensim World-CS, angle should be in degrees! Lab dependent!!!
     RotationMatrix.ForcePlate  =  [0, 1, 0;1, 0, 0;0, 0, -1]; %rotation matrix Force plate CS to Vicon World-CS, angle should be in degrees! Lab dependent!!!
