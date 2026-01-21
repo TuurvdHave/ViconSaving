@@ -86,7 +86,7 @@ for i=1:nFP
     
     %determine which foot hits FP
     pFP_lab     = sum(f(i).corners)./4;
-    timeInd = find(abs(Flab(:,2))>25,1);
+    timeInd = find(abs(Flab(:,3))>25,1);
     if isempty(timeInd)
         timeInd = 1;
     end 
